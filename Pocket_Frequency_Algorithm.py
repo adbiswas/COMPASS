@@ -8,7 +8,7 @@ import csv
 import gc
 
 ###
-entries = 'INPUT_YOUR_PATH_OF_WORKING_DIRECTORY'
+entries = 'INPUT_YOUR_PATH_OF_THE_DIRECTORY_WHERE_YOU HAVE_THE_POCKETS'
 
 dfinal = pd.DataFrame(columns = ['ResID', 'Target'])
 data =[]
