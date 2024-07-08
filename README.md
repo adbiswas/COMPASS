@@ -23,5 +23,10 @@ g. Pocket-Source, Frequency, Score, and Consensus are the four columns that make
 
 h. Pocket-Source gives the name of the PDB ID and the pocket details, the next column Frequency Score gives the total frequency of that pocket.
 
+# Profiling of Interactions
+These pockets reveal eight different ligand-protein interactions.
+This is the.mol2 format for the protein-ligand complexes. The figures also display the interaction profiles.
+
+
 # Further Assistance for Reproducibility
 If you need any more help with successfully implementing the code, please don't hesitate to contact the author at akashdeep.biswas@dompe.com
