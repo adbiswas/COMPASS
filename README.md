@@ -26,7 +26,7 @@ h. Pocket-Source gives the name of the PDB ID and the pocket details, the next c
 # Profiling of Interactions
 The folder called 'Interaction Profile' has the 3D structures of the pockets reveal eight different ligand-protein interactions.
 This is the.mol2 format for the protein-ligand complexes. The figures also display the interaction profiles.
-
+The structures were located in the lowest energy basin of the different Free Energy Landscapes and were retrieved after running Essential Dynamics on the MD simulation trajectories.
 
 # Further Assistance for Reproducibility
 If you need any more help with successfully implementing the code, please don't hesitate to contact the author at akashdeep.biswas@dompe.com
