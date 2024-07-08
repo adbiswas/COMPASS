@@ -8,12 +8,19 @@ In order to make it easier to modify inputs made by other programs, the code Poc
 Please follow the steps below for the usage of the Pocket Frequency Score:
 
 a. With FPocket, create the pockets in the .xlxs format. Also, you have the option to choose the format, like.csv.
+
 b. Organize the folders such that the pocket'X'.xlxs files are located according to their PDBIDs. Please note that the code is flexible and may be modified to separate the folders based on other criteria, however PDBIDs are encouraged.
+
 c. The sixteen columns that should be present in the Pocket'X'.xlxs file are as follows: 'Number,' 'Atom,' 'Element,' 'Residue,' 'ResNum,' 'Chain,' 'X,' 'Y,' 'Z,' 'Charge,' 'Potential,' 'Constraint,' 'Score,' 'Consensus,' 'Pocket,' and 'Source.  This is the FPocket default output file; it may be used as an input file for the current code.
+
 d. In the current directory, put the code for the Pocket_Frequency_Algorithm.py. Create a folder named "Pockets" in the current working directory. Inside, you should see subdirectories labeled with the names of the various systems. The Pocket'X'.xlxs files with the system's pocket information are located inside each system.
+
 e. On the eleventh line of the code for the Pocket Frequency Algorithm, change the path of the directory 'Pockets' to 'INPUT_YOUR_PATH_OF_THE_DIRECTORY_WHERE_YOU_HAVE_THE_POCKETS'.
+
 f. When the program runs without error. For the purpose of checking different phases, it will generate several output files that may be examined. We will name the primary output file SPDP-Score.csv.
+
 g. Pocket-Source, Frequency, Score, and Consensus are the four columns that make up the SPDP-Score.
+
 h. Pocket-Source gives the name of the PDB ID and the pocket details, the next column Frequency Score gives the total frequency of that pocket.
 
 # Further Assistance for Reproducibility
