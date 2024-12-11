@@ -23,6 +23,33 @@ g. Pocket-Source, Frequency, Score, and Consensus are the four columns that make
 
 h. Pocket-Source gives the name of the PDB ID and the pocket details, the next column Frequency Score gives the total frequency of that pocket.
 
+# Algorithm
+Input: Directory containing pocket files  
+Output: Categorized pocket matches and similarity scores  
+
+1. Initialize empty data structures for residue and similarity data.  
+
+2. For each file in the directory:  
+   a. Read the file and add metadata (Pocket and Source identifiers).  
+   b. Filter rows for C-alpha atoms and extract residue information.  
+   c. Format and append residue and pocket data to the main dataset. 
+ 
+3. Compare residues to identify similar pockets across chains.  
+
+4. Save residue similarity data to an intermediate file.  
+
+5. Remove duplicate pocket IDs and generate unique matches.  
+
+6. Categorize pockets into:  
+   a. Similar pockets in the same protein.  
+   b. Similar pockets in different proteins.  
+
+7. Remove duplicate entries from each category.  
+
+8. Compute and score redundancy-free pocket matches.  
+
+9. Save categorized matches and scores to output files.
+
 # Profiling of Interactions
 The folder called 'Interaction Profile' has the 3D structures of the pockets reveal eight different ligand-protein interactions.
 This is the.mol2 format for the protein-ligand complexes. The figures also display the interaction profiles.
