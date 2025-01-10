@@ -24,33 +24,6 @@ g. Pocket-Source, Frequency, Score, and Consensus are the four columns that make
 
 h. Pocket-Source gives the name of the PDB ID and the pocket details, the next column Frequency Score gives the total frequency of that pocket.
 
-# Pseudo Code
-Initialize unique_residues and pfs_scores dictionaries
-For each pocket in Pockets:
-    For each residue in pocket:
-        residue_id ← (residue.name, residue.number, residue.chain, residue.pdb_id)
-        If residue_id not in unique_residues:
-            unique_residues[residue_id] ← 1
-        Else:
-            unique_residues[residue_id] ← unique_residues[residue_id] + 1
-    End For
- End For
- For each pocket in Pockets:
-     pfs ← 0
-     For each residue in pocket:
-         residue_id ← (residue.name, residue.number, residue.chain, residue.pdb_id)
-         pfs += unique_residues[residue_id]
-     End For
-     pfs_scores[pocket.id] ← pfs
- End For
- Determine maximum PFS value
- For each pocket in Pockets:
-     global_score ← pfs_scores[pocket.id] / max_pfs
-     Append (pocket.id, global_score) to global_scores list
- End For
- Sort global_scores in descending order
- Return global_scores
-
 
 # Algorithm
 Input: Directory containing pocket files  
