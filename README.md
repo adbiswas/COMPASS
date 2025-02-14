@@ -1,3 +1,57 @@
+# COMPASS Algorithm
+Input: Directory containing pocket files  
+Output: Categorized pocket matches and similarity scores  
+
+1. Initialize empty data structures for residue and similarity data.  
+
+2. For each file in the directory:  
+   a. Read the file and add metadata (Pocket and Source identifiers).  
+   b. Filter rows for C-alpha atoms and extract residue information.  
+   c. Format and append residue and pocket data to the main dataset. 
+ 
+3. Compare residues to identify similar pockets across chains.  
+
+4. Save residue similarity data to an intermediate file.  
+
+5. Remove duplicate pocket IDs and generate unique matches.  
+
+6. Categorize pockets into:  
+   a. Similar pockets in the same protein.  
+   b. Similar pockets in different proteins.  
+
+7. Remove duplicate entries from each category.  
+
+8. Compute and score redundancy-free pocket matches.  
+
+9. Save categorized matches and scores to output files.
+
+# pseudo code
+Initialize unique_residues and pfs_scores dictionaries
+For each pocket in Pockets:
+    For each residue in pocket:
+        residue_id ← (residue.name, residue.number, residue.chain, residue.pdb_id)
+        If residue_id not in unique_residues:
+            unique_residues[residue_id] ← 1
+        Else:
+            unique_residues[residue_id] ← unique_residues[residue_id] + 1
+    End For
+ End For
+ For each pocket in Pockets:
+     pfs ← 0
+     For each residue in pocket:
+         residue_id ← (residue.name, residue.number, residue.chain, residue.pdb_id)
+         pfs += unique_residues[residue_id]
+     End For
+     pfs_scores[pocket.id] ← pfs
+ End For
+ Determine maximum PFS value
+ For each pocket in Pockets:
+     global_score ← pfs_scores[pocket.id] / max_pfs
+     Append (pocket.id, global_score) to global_scores list
+ End For
+ Sort global_scores in descending order
+ Return global_scores
+
 # Pocket Frequency Score
 
 Confused About Which Crystal Structure to Choose? Let Us Help You Decide!
@@ -34,34 +88,6 @@ f. When the program runs without error. For the purpose of checking different ph
 g. Pocket-Source, Frequency, Score, and Consensus are the four columns that make up the SPDP-Score.
 
 h. Pocket-Source gives the name of the PDB ID and the pocket details, the next column Frequency Score gives the total frequency of that pocket.
-
-
-# Algorithm
-Input: Directory containing pocket files  
-Output: Categorized pocket matches and similarity scores  
-
-1. Initialize empty data structures for residue and similarity data.  
-
-2. For each file in the directory:  
-   a. Read the file and add metadata (Pocket and Source identifiers).  
-   b. Filter rows for C-alpha atoms and extract residue information.  
-   c. Format and append residue and pocket data to the main dataset. 
- 
-3. Compare residues to identify similar pockets across chains.  
-
-4. Save residue similarity data to an intermediate file.  
-
-5. Remove duplicate pocket IDs and generate unique matches.  
-
-6. Categorize pockets into:  
-   a. Similar pockets in the same protein.  
-   b. Similar pockets in different proteins.  
-
-7. Remove duplicate entries from each category.  
-
-8. Compute and score redundancy-free pocket matches.  
-
-9. Save categorized matches and scores to output files.
 
 # Profiling of Interactions
 The folder called 'Interaction Profile' has the 3D structures of the pockets reveal eight different ligand-protein interactions.
