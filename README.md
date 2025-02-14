@@ -1,4 +1,4 @@
-# COMPASS Algorithm
+# COMputational Pocket Analysis and Scoring System (COMPASS) Algorithm
 Input: Directory containing pocket files  
 Output: Categorized pocket matches and similarity scores  
 
