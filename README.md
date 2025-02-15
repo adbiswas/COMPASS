@@ -41,8 +41,7 @@ For each pocket in Pockets:
         
             unique_residues[residue_id] ← unique_residues[residue_id] + 1
             
-    End For
-    
+    End For    
  End For
  
  For each pocket in Pockets:
